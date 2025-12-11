@@ -27,7 +27,7 @@
 
 		<!-- CARD – Artigos -->
 		<div class="col-12 col-md-6 col-lg-4">
-			<div class="card h-100 shadow-sm border-0 p-3 produto-card">
+			<div class="card h-100 shadow-sm border-0 p-3 produto-card" style="background-color:#EDE6DB">
 
 				<div class="card-body d-flex align-items-center justify-content-between gap-3">
 
@@ -38,7 +38,7 @@
 							Fique por dentro de estudos, fatos, curiosidades e relatos coletados pela BeneficaLight Group®.
 						</p>
 
-						<button class="btn btn-outline-dark mt-2"
+						<button class="btn btn-dark mt-2"
 								data-bs-toggle="modal"
 								data-bs-target="#modalArtigo">
 							Saiba Mais
@@ -57,51 +57,145 @@
 		</div>
 
 
-
-		<!-- CARD – Gráfico -->
+		<!-- CARD – Gráficos -->
 		<div class="col-12 col-md-6 col-lg-4">
-			<div class="card h-100 shadow-sm border-0 text-center p-3 produto-card">
-				<img src="~/img/LuvaInteligente.jpg"
-					 class="card-img-top mx-auto"
-					 style="width:150px;"
-					 alt="Colete Ergonômico">
+			<div class="card h-100 shadow-sm border-0 p-3 produto-card" style="background-color: #EDE6DB">
 
-				<div class="card-body">
-					<h5 class="card-title fw-bold">Monitoramento em Tempo Real</h5>
-					<p class="card-text">
-						Acompanhe suas variações e alterações através de gráficos.
-					</p>
-					<button class="btn btn-outline-light mt-2"
-							data-bs-toggle="modal"
-							data-bs-target="#modalMonitoramento">
-						Saiba Mais
-					</button>
+				<div class="card-body d-flex align-items-center justify-content-between gap-3">
+
+					<!-- TEXTO À ESQUERDA -->
+					<div class="text-start flex-grow-1">
+						<h5 class="card-title fw-bold">Monitoramento em Tempo Real</h5>
+						<p class="card-text">
+							Acompanhe e verifique suas taxas frequentemente.
+						</p>
+
+						<button class="btn btn-dark mt-2"
+								data-bs-toggle="modal"
+								data-bs-target="#modalMonitoramento">
+							Saiba Mais
+						</button>
+					</div>
+
+					<!-- APENAS UMA IMAGEM À DIREITA -->
+					<div class="single-image-container">
+						<img style="height: 180px;" src="~/img/Grafico.png" class="single-image" alt="Imagem 3">
+					</div>
+
 				</div>
+
 			</div>
 		</div>
 
 		<!-- CARD – Terapia Musical -->
 		<div class="col-12 col-md-6 col-lg-4">
-			<div class="card h-100 shadow-sm border-0 text-center p-3 produto-card">
-				<img src="~/img/ColeteInteligente.jpeg"
-					 class="card-img-top mx-auto"
-					 style="width:150px;"
-					 alt="Luva Inteligente">
+			<div class="card h-100 shadow-sm border-0 p-3 produto-card" style="background-color: #EDE6DB">
 
-				<div class="card-body">
-					<h5 class="card-title fw-bold">Terapia Musical</h5>
-					<p class="card-text">
-						Conheça os benefícios da Terapia Musical.
-					</p>
-					<button class="btn btn-outline-light mt-2"
-							data-bs-toggle="modal"
-							data-bs-target="#modalTerapia">
-						Saiba Mais
-					</button>
+				<div class="card-body d-flex align-items-center justify-content-between gap-3">
+
+					<!-- TEXTO À ESQUERDA -->
+					<div class="text-start flex-grow-1">
+						<h5 class="card-title fw-bold">Terapia Musical</h5>
+						<p class="card-text">
+							Utilize e experimente os benefícios da terapia musical.
+						</p>
+
+						<button class="btn btn-dark mt-2"
+								data-bs-toggle="modal"
+								data-bs-target="#modalMonitoramento">
+							Saiba Mais
+						</button>
+					</div>
+
+					<!-- IMAGEM À DIREITA (PROPORCIONAL E BEM AJUSTADA) -->
+					<div class="single-image-container">
+						<img src="~/img/Terapia2.png"
+							 style="height: 180px;"
+							 alt="Monitoramento" />
+					</div>
+
 				</div>
+
 			</div>
 		</div>
+
 
 	</div>
 </section>
 
+<!-- Fade Artigos -->
+<div class="modal fade" id="modalArtigo" tabindex="-1" aria-labelledby="modalArtigoLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-lg">
+		<div class="modal-content"
+			 style="color: #000000; border-radius: 20px; backdrop-filter: blur(10px); background-color: #EBEBEB;">
+
+			<div class="modal-header border-0">
+				<h1 class="modal-title text-center align-items-center" id="modalArtigoLabel">Acompanhe as Novidades</h1>
+				<button class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+
+			<div class="modal-body">
+				<div class="image-row d-flex justify-content-center gap-3 mt-4">
+
+					<div class="img-wrapper">
+						<img src="~/img/Materia1.png" class="modal-img" alt="Foto 1">
+					</div>
+
+					<div class="img-wrapper">
+						<img src="~/img/Materia2.png" class="modal-img" alt="Foto 2">
+					</div>
+					<div class="img-wrapper">
+						<img src="~/img/Materia3.png" class="modal-img" alt="Foto 3">
+					</div>
+
+				</div>
+
+			</div>
+
+
+		</div>
+	</div>
+</div>
+
+<!-- Fade Graficos -->
+<div class="modal fade" id="modalMonitoramento" tabindex="-1" aria-labelledby="modalMonitoramentoLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-lg">
+		<div class="modal-content"
+			 style="color: #000000; border-radius: 20px; backdrop-filter: blur(10px); background-color: #EBEBEB;">
+
+			<div class="modal-header border-0">
+				<h1 class="modal-title text-center align-items-center" id="modalArtigoLabel">Monitore suas Taxas</h1>
+				<button class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+
+			<div class="modal-body">
+				<img src="~/img/Grafico.png" class="modal-img" alt="Foto 1">
+			</div>
+
+
+		</div>
+	</div>
+</div>
+
+<!-- Fade Terapia -->
+<div class="modal fade" id="modalTerapia" tabindex="-1" aria-labelledby="modalTerapiaLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-lg">
+		<div class="modal-content"
+			 style="color: #000000; border-radius: 20px; backdrop-filter: blur(10px); background-color: #EBEBEB;">
+
+			<div class="modal-header border-0">
+				<h1 class="modal-title text-center align-items-center" id="modalArtigoLabel">Experimente a Terapia Musical</h1>
+				<button class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+
+			<div class="modal-body">
+				<div class="image-row d-flex justify-content-center gap-3 mt-4">
+					<img src="~/img/Terapia.png" class="modal-img" alt="Foto 1">
+				</div>
+
+			</div>
+
+
+		</div>
+	</div>
+</div>

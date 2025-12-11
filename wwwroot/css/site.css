@@ -17,11 +17,16 @@ body {
     padding: 0;
 }
 
-/* Cabeçalho */
-header {
-    color: var(--branco);
-    padding: 15px 30px;
-    text-align: center;
+h2 {
+    font-family: Broadway;
+    font-weight: bold;
+    color: #252525;
+    font-style: italic;
+    letter-spacing: 3px;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Rodapé */
@@ -32,12 +37,9 @@ footer {
     padding: 20px 0;
 }
 
-/* Navegação */
-nav a {
-    color: var(--bege);
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
+/* Card 1 */
+.card-1 {
+    z-index: 2;
 }
 
     nav a:hover {
@@ -67,34 +69,40 @@ nav a {
     color: var(--branco);
 }
 
-    .btn-secondary:hover {
-        background-color: var(--verde-escuro);
-        color: var(--verde-escuro);
-    }
+/* Container das imagens em camadas */
+.image-stack {
+    position: relative;
+    width: 280px; /* ajuste conforme desejar */
+    height: 170px;
+}
 
-/* Inputs de formulário */
-input, select, textarea {
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid var(--verde-escuro);
-    border-radius: 6px;
+/* imagens dentro do stack */
+.stack-img {
+    position: absolute;
     width: 100%;
-    background-color: var(--bege);
-    color: var(--cinza-escuro);
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0px 6px 16px rgba(0,0,0,0.25);
 }
 
-    input:focus, select:focus, textarea:focus {
-        border-color: var(--verde-escuro);
-        outline: none;
-    }
-
-/* Links */
-a {
-    color: var(--verde-escuro);
-    text-decoration: none;
+/* imagem de trás */
+.img-back {
+    transform: rotate(-2deg);
+    left: -20px;
+    top: 10px;
+    z-index: 1;
 }
 
-    a:hover {
-        color: var(--roxo);
-        text-decoration: underline;
-    }
+/* imagem da frente */
+.img-front {
+    transform: rotate(2deg);
+    right: -8px;
+    top: -8px;
+    z-index: 2;
+}
+
+
+body {
+    margin-bottom: 60px;
+}

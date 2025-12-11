@@ -48,7 +48,7 @@ namespace BENEFICALIGHT.Controllers
         // GET: Pacientes/Create
         public IActionResult Create()
         {
-            ViewData["MedicoId"] = new SelectList(_context.Medico, "MedicoId", "MedicoId");
+            ViewData["MedicoId"] = new SelectList(_context.Medico, "MedicoId", "Nome");
             return View();
         }
 

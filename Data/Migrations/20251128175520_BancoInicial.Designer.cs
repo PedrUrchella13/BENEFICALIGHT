@@ -4,6 +4,7 @@ using BENEFICALIGHT.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BENEFICALIGHT.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251128175520_BancoInicial")]
+    partial class BancoInicial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,135 +24,6 @@ namespace BENEFICALIGHT.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("BENEFICALIGHT.Models.Especializacao", b =>
-                {
-                    b.Property<int>("EspecializacaoId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EspecializacaoId"));
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("EspecializacaoId");
-
-                    b.ToTable("Especializacao");
-                });
-
-            modelBuilder.Entity("BENEFICALIGHT.Models.Medico", b =>
-                {
-                    b.Property<int>("MedicoId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MedicoId"));
-
-                    b.Property<int>("CPF")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CRM")
-                        .HasColumnType("int");
-
-                    b.Property<DateOnly>("DataNascimento")
-                        .HasColumnType("date");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("EspecializacaoId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Hospital")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Idade")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Telefone")
-                        .HasColumnType("int");
-
-                    b.HasKey("MedicoId");
-
-                    b.HasIndex("EspecializacaoId");
-
-                    b.ToTable("Medico");
-                });
-
-            modelBuilder.Entity("BENEFICALIGHT.Models.Paciente", b =>
-                {
-                    b.Property<int>("PacienteId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PacienteId"));
-
-                    b.Property<int>("CPF")
-                        .HasColumnType("int");
-
-                    b.Property<DateOnly>("DataNascimento")
-                        .HasColumnType("date");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Idade")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MedicoId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Telefone")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TipoSanguineo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("PacienteId");
-
-                    b.HasIndex("MedicoId");
-
-                    b.ToTable("Paciente");
-                });
-
-            modelBuilder.Entity("BENEFICALIGHT.Models.Tratamento", b =>
-                {
-                    b.Property<int>("TratamentoId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TratamentoId"));
-
-                    b.Property<DateTime>("HorarioFim")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("HorarioInicio")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("PacienteId")
-                        .HasColumnType("int");
-
-                    b.HasKey("TratamentoId");
-
-                    b.HasIndex("PacienteId");
-
-                    b.ToTable("Tratamento");
-                });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
@@ -351,39 +225,6 @@ namespace BENEFICALIGHT.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
-                });
-
-            modelBuilder.Entity("BENEFICALIGHT.Models.Medico", b =>
-                {
-                    b.HasOne("BENEFICALIGHT.Models.Especializacao", "Especializacao")
-                        .WithMany()
-                        .HasForeignKey("EspecializacaoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Especializacao");
-                });
-
-            modelBuilder.Entity("BENEFICALIGHT.Models.Paciente", b =>
-                {
-                    b.HasOne("BENEFICALIGHT.Models.Medico", "Medico")
-                        .WithMany()
-                        .HasForeignKey("MedicoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Medico");
-                });
-
-            modelBuilder.Entity("BENEFICALIGHT.Models.Tratamento", b =>
-                {
-                    b.HasOne("BENEFICALIGHT.Models.Paciente", "Paciente")
-                        .WithMany()
-                        .HasForeignKey("PacienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Paciente");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

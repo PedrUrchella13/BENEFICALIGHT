@@ -1,3 +1,39 @@
+
+h1 {
+    font-family: Broadway;
+    font-weight: bold;
+    color: #252525;
+    font-style: italic;
+    letter-spacing: 3px;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.benefica-photo-card {
+    border-radius: 20px;
+    box-shadow: 0px 6px 18px rgba(0,0,0,0.18);
+}
+
+/* Card 1 — fica normal */
+.card-1 {
+    z-index: 2;
+}
+
+/* Card 2 — deslocado para a direita e um pouco para baixo */
+.card-2 {
+    margin-top: -60px; /* sobe */
+    margin-left: 40px; /* vai para direita */
+    z-index: 3;
+}
+
+/* Card 3 — alinhado embaixo */
+.card-3 {
+    margin-top: -40px;
+    z-index: 1;
+}
+
 html {
     font-size: 14px;
 }
@@ -31,6 +67,8 @@ html {
     left: -60px;
     top: 10px;
     z-index: 1;
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 /* imagem da frente */
@@ -39,16 +77,20 @@ html {
     right: -8px;
     top: -8px;
     z-index: 2;
+html {
+    position: relative;
+    min-height: 100%;
 }
 
-.produto-card .text-start {
-    margin-right: 20px; /* OU qualquer valor que fique bom */
+body {
+    margin-bottom: 60px;
 }
 
-.produto-card .card-body {
-    align-items: stretch !important;
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+    color: var(--bs-secondary-color);
+    text-align: end;
 }
 
-.produto-card button {
-    align-self: center;
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+    text-align: start;
 }

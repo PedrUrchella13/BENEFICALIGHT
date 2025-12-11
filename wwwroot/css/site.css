@@ -17,8 +17,16 @@ body {
     padding: 0;
 }
 
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: #252525;
+    font-style: italic;
+    letter-spacing: 3px;
+}
+
 h2 {
-    font-family: Broadway;
+    font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     color: #252525;
     font-style: italic;

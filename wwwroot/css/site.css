@@ -1,130 +1,100 @@
-h1 {
-    font-family: Broadway, serif;
-    font-weight: bold;
-    font-style: italic;
-    color: #252525;
-    letter-spacing: 3px;
-    text-align: center;
+:root {
+    --verde-neon: #4FFF90; /* detalhe */
+    --verde-escuro: #23421F; /* cor principal */
+    --roxo: #4B006B; /* detalhe */
+    --bege: #EDE6DB; /* cor principal / fundo */
+    --cinza-escuro: #454545;
+    --cinza-claro: #F2F2F2;
+    --branco: #FFFFFF;
 }
 
-h2, h3, h4 {
-    font-family: "Times New Roman", serif;
-    color: #2c2c2c;
-}
-
-p {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #555;
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-/* ---------------------------- */
-/*           LAYOUT             */
-/* ---------------------------- */
-
-.section-container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 40px 20px;
-}
-
-.hero {
-    text-align: center;
-    padding: 50px 20px;
-}
-
-/* ---------------------------- */
-/*             CARDS            */
-/* ---------------------------- */
-
-.card-stack {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-    position: relative;
-}
-
-.benefica-photo-card {
-    width: 260px;
-    border-radius: 25px;
-    overflow: hidden;
-    box-shadow: 0px 6px 18px rgba(0,0,0,0.18);
-}
-
-/* Card capas sobrepostas como no Figma */
-.card-1 {
-    z-index: 3;
-}
-
-.card-2 {
-    margin-left: -40px;
-    margin-top: 30px;
-    z-index: 2;
-}
-
-.card-3 {
-    margin-left: -40px;
-    margin-top: 60px;
-    z-index: 1;
-}
-
-/* ---------------------------- */
-/*           BOTÕES             */
-/* ---------------------------- */
-
-.btn-primary-custom {
-    background-color: #252525;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 8px;
-    border: none;
-    transition: .3s;
-    font-family: Arial;
-html {
-    font-size: 14px;
-}
-
-    .btn-primary-custom:hover {
-        transform: translateY(-3px);
-        background-color: #000;
-    }
-@media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
-}
-
-/* ---------------------------- */
-/*         RESPONSIVIDADE       */
-/* ---------------------------- */
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-@media (max-width: 768px) {
-html {
-    position: relative;
-    min-height: 100%;
-}
-
-    .card-stack {
-        flex-direction: column;
-        gap: 20px;
-    }
+/* Corpo da página */
 body {
-    margin-bottom: 60px;
+    font-family: Arial, sans-serif;
+    background-color: var(--branco); /* fundo suave */
+    color: var(--cinza-escuro);
+    margin: 0;
+    padding: 0;
 }
 
-    .card-2, .card-3 {
-        margin: 0;
+/* Cabeçalho */
+header {
+    color: var(--branco);
+    padding: 15px 30px;
+    text-align: center;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Navegação */
+nav a {
+    color: var(--bege);
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+    nav a:hover {
+        color: var(--verde-escuro);
     }
-}
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-    color: var(--bs-secondary-color);
-    text-align: end;
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 5px;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-    text-align: start;
+.btn-primary {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
 }
+
+    .btn-primary:hover {
+        background-color: var(--verde-escuro);
+        color: var(--branco);
+    }
+
+.btn-secondary {
+    background-color: var(--roxo);
+    color: var(--branco);
+}
+
+    .btn-secondary:hover {
+        background-color: var(--verde-escuro);
+        color: var(--verde-escuro);
+    }
+
+/* Inputs de formulário */
+input, select, textarea {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid var(--verde-escuro);
+    border-radius: 6px;
+    width: 100%;
+    background-color: var(--bege);
+    color: var(--cinza-escuro);
+}
+
+    input:focus, select:focus, textarea:focus {
+        border-color: var(--verde-escuro);
+        outline: none;
+    }
+
+/* Links */
+a {
+    color: var(--verde-escuro);
+    text-decoration: none;
+}
+
+    a:hover {
+        color: var(--roxo);
+        text-decoration: underline;
+    }

@@ -42,9 +42,9 @@ footer {
     z-index: 2;
 }
 
-    nav a:hover {
-        color: var(--verde-escuro);
-    }
+nav a:hover {
+    color: var(--verde-escuro);
+}
 
 .btn {
     padding: 10px 20px;

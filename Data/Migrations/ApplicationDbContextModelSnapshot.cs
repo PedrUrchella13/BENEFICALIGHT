@@ -17,7 +17,7 @@ namespace BENEFICALIGHT.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.1")
+                .HasAnnotation("ProductVersion", "9.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -36,7 +36,7 @@ namespace BENEFICALIGHT.Data.Migrations
 
                     b.HasKey("EspecializacaoId");
 
-                    b.ToTable("Especializacao");
+                    b.ToTable("Especializacao", (string)null);
                 });
 
             modelBuilder.Entity("BENEFICALIGHT.Models.Medico", b =>
@@ -81,7 +81,7 @@ namespace BENEFICALIGHT.Data.Migrations
 
                     b.HasIndex("EspecializacaoId");
 
-                    b.ToTable("Medico");
+                    b.ToTable("Medico", (string)null);
                 });
 
             modelBuilder.Entity("BENEFICALIGHT.Models.Paciente", b =>
@@ -124,7 +124,7 @@ namespace BENEFICALIGHT.Data.Migrations
 
                     b.HasIndex("MedicoId");
 
-                    b.ToTable("Paciente");
+                    b.ToTable("Paciente", (string)null);
                 });
 
             modelBuilder.Entity("BENEFICALIGHT.Models.Tratamento", b =>
@@ -148,7 +148,7 @@ namespace BENEFICALIGHT.Data.Migrations
 
                     b.HasIndex("PacienteId");
 
-                    b.ToTable("Tratamento");
+                    b.ToTable("Tratamento", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

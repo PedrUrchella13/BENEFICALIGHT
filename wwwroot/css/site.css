@@ -1,26 +1,125 @@
+h1 {
+    font-family: Broadway, serif;
+    font-weight: bold;
+    font-style: italic;
+    color: #252525;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+h2, h3, h4 {
+    font-family: "Times New Roman", serif;
+    color: #2c2c2c;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ---------------------------- */
+/*           LAYOUT             */
+/* ---------------------------- */
+
+.section-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+/* ---------------------------- */
+/*             CARDS            */
+/* ---------------------------- */
+
+.card-stack {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    position: relative;
+}
+
+.benefica-photo-card {
+    width: 260px;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0px 6px 18px rgba(0,0,0,0.18);
+}
+
+/* Card capas sobrepostas como no Figma */
+.card-1 {
+    z-index: 3;
+}
+
+.card-2 {
+    margin-left: -40px;
+    margin-top: 30px;
+    z-index: 2;
+}
+
+.card-3 {
+    margin-left: -40px;
+    margin-top: 60px;
+    z-index: 1;
+}
+
+/* ---------------------------- */
+/*           BOTÕES             */
+/* ---------------------------- */
+
+.btn-primary-custom {
+    background-color: #252525;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    border: none;
+    transition: .3s;
+    font-family: Arial;
 html {
   font-size: 14px;
 }
 
+    .btn-primary-custom:hover {
+        transform: translateY(-3px);
+        background-color: #000;
+    }
 @media (min-width: 768px) {
   html {
     font-size: 16px;
   }
 }
 
+/* ---------------------------- */
+/*         RESPONSIVIDADE       */
+/* ---------------------------- */
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
+@media (max-width: 768px) {
 html {
   position: relative;
   min-height: 100%;
 }
 
+    .card-stack {
+        flex-direction: column;
+        gap: 20px;
+    }
 body {
   margin-bottom: 60px;
 }
 
+    .card-2, .card-3 {
+        margin: 0;
+    }
+}
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
   color: var(--bs-secondary-color);
   text-align: end;

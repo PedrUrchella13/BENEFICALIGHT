@@ -1,8 +1,96 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+	ViewData["Title"] = "Página Inicial";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!-- HERO SECTION -->
+<section class="hero-section d-flex align-items-center" id="home">
+	<div class="hero-content text-center text-light">
+		<h1 class="hero-title">BENEFICALIGHT</h1>
+		<p class="hero-text">
+			A BENEFICALIGHT é uma empresa criada para promover alívio, dignidade e qualidade de vida a pacientes em tratamento contra o câncer. Surge da vivência de seus fundadores, que sentiram de perto a dor da doença, e transformaram essa experiência em inovação.
+			A startup desenvolve um colete terapêutico com LEDs de 630 nm, sensores inteligentes, assistente de IA e faixa EEG, oferecendo uma forma não invasiva, acessível e humanizada de apoio ao tratamento oncológico — desde os primeiros estágios até os cuidados paliativos.
+		</p>
+		<a href="#sobre" class="hero-btn btn btn-lg mt-3 btn-outline-light">Conheça Nossas Tecnologias</a>
+	</div>
+</section>
+
+<!-- SOBRE -->
+<section class="info-section mt-5" id="sobre">
+	<h2 class="info-title text-center">Tecnologias presentes na empresa</h2>
+
+	<p class="info-text mb-5 text-center">
+		Monitoramento e acompanhamento em tempo real,compartilhando com médicos e familiares o processo de tratamento do paciente. Além de tudo oferecendo recursos de apoio, como artigos, terapia musical e a IA Ben.
+	</p>
+
+	<!-- CARDS -->
+	<div class="row g-4 justify-content-center">
+
+		<!-- CARD – Artigos -->
+		<div class="col-12 col-md-6 col-lg-4">
+			<div class="card h-100 shadow-sm border-0 text-center p-3 produto-card">
+				<img src="~/img/ColeteInteligente.jpeg"
+					 class="card-img-top mx-auto"
+					 style="width:150px;"
+					 alt="Ombreira Inteligente">
+
+				<div class="card-body">
+					<h5 class="card-title fw-bold"></h5>
+					<p class="card-text">
+						Fique por dentro de estudos, fatos, curiosidades e relatos.
+					</p>
+					<button class="btn btn-outline-light mt-2"
+							data-bs-toggle="modal"
+							data-bs-target="#modalOmbreira">
+						Saiba Mais
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- CARD – Gráfico -->
+		<div class="col-12 col-md-6 col-lg-4">
+			<div class="card h-100 shadow-sm border-0 text-center p-3 produto-card">
+				<img src="~/img/LuvaInteligente.jpg"
+					 class="card-img-top mx-auto"
+					 style="width:150px;"
+					 alt="Colete Ergonômico">
+
+				<div class="card-body">
+					<h5 class="card-title fw-bold">Colete Ergonômico</h5>
+					<p class="card-text">
+						Suporte lombar inteligente com monitoramento de movimentos.
+					</p>
+					<button class="btn btn-outline-light mt-2"
+							data-bs-toggle="modal"
+							data-bs-target="#modalColete">
+						Saiba Mais
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- CARD – Terapia Musical -->
+		<div class="col-12 col-md-6 col-lg-4">
+			<div class="card h-100 shadow-sm border-0 text-center p-3 produto-card">
+				<img src="~/img/ColeteInteligente.jpeg"
+					 class="card-img-top mx-auto"
+					 style="width:150px;"
+					 alt="Luva Inteligente">
+
+				<div class="card-body">
+					<h5 class="card-title fw-bold">Luva Inteligente</h5>
+					<p class="card-text">
+						Registra movimentos e envia alertas para prevenir lesões.
+					</p>
+					<button class="btn btn-outline-light mt-2"
+							data-bs-toggle="modal"
+							data-bs-target="#modalLuva">
+						Saiba Mais
+					</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>
+

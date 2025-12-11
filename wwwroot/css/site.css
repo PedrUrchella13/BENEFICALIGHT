@@ -1,10 +1,20 @@
+:root {
+    --verde-neon: #4FFF90; /* detalhe */
+    --verde-escuro: #23421F; /* cor principal */
+    --roxo: #4B006B; /* detalhe */
+    --bege: #EDE6DB; /* cor principal / fundo */
+    --cinza-escuro: #454545;
+    --cinza-claro: #F2F2F2;
+    --branco: #FFFFFF;
+}
 
-h1 {
-    font-family: Broadway;
-    font-weight: bold;
-    color: #252525;
-    font-style: italic;
-    letter-spacing: 3px;
+/* Corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--branco); /* fundo suave */
+    color: var(--cinza-escuro);
+    margin: 0;
+    padding: 0;
 }
 
 h2 {
@@ -19,9 +29,12 @@ p {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.benefica-photo-card {
-    border-radius: 20px;
-    box-shadow: 0px 6px 18px rgba(0,0,0,0.18);
+/* Rodapé */
+footer {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    text-align: center;
+    padding: 20px 0;
 }
 
 /* Card 1 */
@@ -29,27 +42,31 @@ p {
     z-index: 2;
 }
 
-/* Card 2 — deslocado para a direita e um pouco para baixo */
-.card-2 {
-    margin-top: -60px; /* sobe */
-    margin-left: 40px; /* vai para direita */
-    z-index: 3;
+nav a:hover {
+    color: var(--verde-escuro);
 }
 
-/* Card 3 — alinhado embaixo */
-.card-3 {
-    margin-top: -40px;
-    z-index: 1;
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 5px;
 }
 
-html {
-    font-size: 14px;
+.btn-primary {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
 }
 
-@media (min-width: 768px) {
-    html {
-        font-size: 16px;
+    .btn-primary:hover {
+        background-color: var(--verde-escuro);
+        color: var(--branco);
     }
+
+.btn-secondary {
+    background-color: var(--roxo);
+    color: var(--branco);
 }
 
 /* Container das imagens em camadas */
@@ -83,9 +100,4 @@ html {
     right: -8px;
     top: -8px;
     z-index: 2;
-}
-
-
-body {
-    margin-bottom: 60px;
 }

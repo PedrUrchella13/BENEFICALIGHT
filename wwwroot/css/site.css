@@ -1,6 +1,32 @@
+:root {
+    --verde-neon: #4FFF90; /* detalhe */
+    --verde-escuro: #23421F; /* cor principal */
+    --roxo: #4B006B; /* detalhe */
+    --bege: #EDE6DB; /* cor principal / fundo */
+    --cinza-escuro: #454545;
+    --cinza-claro: #F2F2F2;
+    --branco: #FFFFFF;
+}
+
+/* Corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--branco); /* fundo suave */
+    color: var(--cinza-escuro);
+    margin: 0;
+    padding: 0;
+}
 
 h1 {
-    font-family: Broadway;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: #252525;
+    font-style: italic;
+    letter-spacing: 3px;
+}
+
+h2 {
+    font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     color: #252525;
     font-style: italic;
@@ -11,57 +37,75 @@ p {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.benefica-photo-card {
-    border-radius: 20px;
-    box-shadow: 0px 6px 18px rgba(0,0,0,0.18);
+/* Rodapé */
+footer {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    text-align: center;
+    padding: 20px 0;
 }
 
-/* Card 1 — fica normal */
+/* Card 1 */
 .card-1 {
     z-index: 2;
 }
 
-/* Card 2 — deslocado para a direita e um pouco para baixo */
-.card-2 {
-    margin-top: -60px; /* sobe */
-    margin-left: 40px; /* vai para direita */
-    z-index: 3;
+nav a:hover {
+    color: var(--verde-escuro);
 }
 
-/* Card 3 — alinhado embaixo */
-.card-3 {
-    margin-top: -40px;
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.btn-primary {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+}
+
+    .btn-primary:hover {
+        background-color: var(--verde-escuro);
+        color: var(--branco);
+    }
+
+.btn-secondary {
+    background-color: var(--roxo);
+    color: var(--branco);
+}
+
+/* Container das imagens em camadas */
+.image-stack {
+    position: relative;
+    width: 280px; /* ajuste conforme desejar */
+    height: 170px;
+}
+
+/* imagens dentro do stack */
+.stack-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0px 6px 16px rgba(0,0,0,0.25);
+}
+
+/* imagem de trás */
+.img-back {
+    transform: rotate(-2deg);
+    left: -20px;
+    top: 10px;
     z-index: 1;
 }
 
-html {
-    font-size: 14px;
-}
-
-@media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-    position: relative;
-    min-height: 100%;
-}
-
-body {
-    margin-bottom: 60px;
-}
-
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-    color: var(--bs-secondary-color);
-    text-align: end;
-}
-
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-    text-align: start;
+/* imagem da frente */
+.img-front {
+    transform: rotate(2deg);
+    right: -8px;
+    top: -8px;
+    z-index: 2;
 }
